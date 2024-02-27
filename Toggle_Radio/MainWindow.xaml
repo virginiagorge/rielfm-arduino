@@ -1,0 +1,39 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Toggle_Radio"
+        xmlns:ToggleClass="clr-namespace:ToggleClass;assembly=ToggleClass" x:Class="Toggle_Radio.MainWindow"
+        mc:Ignorable="d"
+        Title="Botones Radio" Height="414" Width="326">
+    <Grid>
+        <Border x:Name="CONSOLA" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="86" Margin="10,10,0,0" VerticalAlignment="Top" Width="140"/>
+        <Border x:Name="CARTEL_LED_UNO" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="86" Margin="10,101,0,0" VerticalAlignment="Top" Width="140">
+            <TextBlock HorizontalAlignment="Left" Height="32" Margin="27,9,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"><Run Text="ACTIVAR"/><LineBreak/><Run Text="CARTEL"/><Run Text=" LED 1"/><LineBreak/><Run Text="LED"/></TextBlock>
+        </Border>
+        <Border x:Name="POTENCIA_UNO" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="86" Margin="10,192,0,0" VerticalAlignment="Top" Width="140"/>
+        <Border x:Name="TRANSMISOR_UNO" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="86" Margin="10,283,0,0" VerticalAlignment="Top" Width="140"/>
+        <Border x:Name="CARTEL_LED_DOS" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="86" Margin="167,101,0,0" VerticalAlignment="Top" Width="140"/>
+        <Border x:Name="POTENCIA_DOS" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="86" Margin="167,192,0,0" VerticalAlignment="Top" Width="140">
+            <TextBlock HorizontalAlignment="Left" Height="33" TextWrapping="Wrap" VerticalAlignment="Top" Width="89" Margin="28,9,0,0"><Run Text="ENCENDER"/><LineBreak/><Run Text="POTENCIA "/><Run Text="2"/></TextBlock>
+        </Border>
+        <Border x:Name="TRANSMISOR_DOS" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="86" Margin="167,283,0,0" VerticalAlignment="Top" Width="140"/>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="36,30,0,0" TextWrapping="Wrap" Text="USAR CONSOLA" VerticalAlignment="Top" Width="89"/>
+        <TextBlock HorizontalAlignment="Left" Height="32" Margin="194,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"><Run Text="ACTIVAR"/><LineBreak/><Run Text="CARTEL"/><Run Text=" LED "/><Run Text="2"/><LineBreak/><Run Text="LED"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="36,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"><Run Text="ENCENDER"/><LineBreak/><Run Text="POTENCIA 1"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="36,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"><Run Text="ENCENDER"/><LineBreak/><Run Text="TRANSMISOR"/><Run Text=" 1"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="33" Margin="194,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="89"><Run Text="ENCENDER"/><LineBreak/><Run Text="TRANSMISOR"/><Run Text=" "/><Run Text="2"/></TextBlock>
+
+        <ToggleClass:Toggle x:Name="USAR_CONSOLA_TOGGLE" Content="Toggle" HorizontalAlignment="Left" Margin="51,51,0,0" VerticalAlignment="Top" Checked="USAR_CONSOLA_Changed" Unchecked="USAR_CONSOLA_Changed" />
+        <ToggleClass:Toggle x:Name="CARTEL_LED_1_TOGGLE" Content="Toggle" HorizontalAlignment="Left" Margin="51,147,0,0" VerticalAlignment="Top" Checked="Cartel_1_Changed" Unchecked="Cartel_1_Changed"/>
+        <ToggleClass:Toggle x:Name="CARTEL_LED_2_TOGGLE" Content="Toggle" HorizontalAlignment="Left" Margin="206,148,0,0" VerticalAlignment="Top" Checked="Cartel_2_Changed" Unchecked="Cartel_2_Changed"/>
+        <ToggleClass:Toggle x:Name="ENCENDER_POTENCIA_1_TOGGLE" Content="Toggle" HorizontalAlignment="Left" Margin="51,242,0,0" VerticalAlignment="Top" Checked="Toggle_Changed" Unchecked="Toggle_Changed"/>
+        <ToggleClass:Toggle x:Name="ENCENDER_POTENCIA_2_TOGGLE" Content="Toggle" HorizontalAlignment="Left" Margin="206,242,0,0" VerticalAlignment="Top" Checked="Toggle_Changed" Unchecked="Toggle_Changed"/>
+        <ToggleClass:Toggle x:Name="ENCENDER_TRANSMISOR_1_TOGGLE" Content="Toggle" HorizontalAlignment="Left" Margin="51,329,0,0" VerticalAlignment="Top" Checked="Toggle_Changed" Unchecked="Toggle_Changed"/>
+        <ToggleClass:Toggle x:Name="ENCENDER_TRANSMISOR_2_TOGGLE" Content="Toggle" HorizontalAlignment="Left" Margin="206,329,0,0" VerticalAlignment="Top" Checked="Toggle_Changed" Unchecked="Toggle_Changed"/>
+
+    </Grid>
+</Window>
+
+    
