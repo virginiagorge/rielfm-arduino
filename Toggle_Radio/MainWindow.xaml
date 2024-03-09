@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Toggle_Radio"
         xmlns:ToggleClass="clr-namespace:ToggleClass;assembly=ToggleClass" x:Class="Toggle_Radio.MainWindow"
         mc:Ignorable="d"
-        Title="Botones Radio" Height="414" Width="326">
+        Title="Arduino LED" Height="414" Width="326">
     <Grid>
         <Border x:Name="CONSOLA" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="86" Margin="10,10,0,0" VerticalAlignment="Top" Width="140"/>
         <Border x:Name="CARTEL_LED_UNO" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="86" Margin="10,101,0,0" VerticalAlignment="Top" Width="140">

@@ -72,10 +72,10 @@ namespace Toggle_Radio
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                data[CARTEL_LED_1] = Convert.ToByte(CARTEL_LED_1_TOGGLE.IsChecked == true && AudioPlayChecker.IsAudioPlaying(AudioPlayChecker.GetNestorRenderDevice()));
+                data[CARTEL_LED_1] = Convert.ToByte(CARTEL_LED_1_TOGGLE.IsChecked == true && AudioPlaybackWithWASAPI.IsAudioPlaying(AudioPlaybackWithWASAPI.GetNestorRenderDevice()));
                 Console.WriteLine(data[CARTEL_LED_1]);
 
-                data[CARTEL_LED_2] = Convert.ToByte(CARTEL_LED_2_TOGGLE.IsChecked == true && AudioPlayChecker.IsAudioPlaying(AudioPlayChecker.GetPeceraRenderDevice()));
+                data[CARTEL_LED_2] = Convert.ToByte(CARTEL_LED_2_TOGGLE.IsChecked == true && AudioPlaybackWithWASAPI.IsAudioPlaying(AudioPlaybackWithWASAPI.GetPeceraRenderDevice()));
                 Console.WriteLine(data[CARTEL_LED_2]);
 
                 puertoArduino.Write(data, 0, 8);
@@ -127,7 +127,7 @@ namespace Toggle_Radio
             {
                 case "CARTEL_LED_1_TOGGLE":
                     data[CARTEL_LED_1] = Convert.ToByte(toggleButton.IsChecked == true && (
-                        AudioPlayChecker.IsAudioPlaying(AudioPlayChecker.GetNestorRenderDevice())
+                    AudioPlaybackWithWASAPI.IsAudioPlaying(AudioPlaybackWithWASAPI.GetNestorRenderDevice())
                     ));
                     break;
 
@@ -145,7 +145,7 @@ namespace Toggle_Radio
             {
                 case "CARTEL_LED_2_TOGGLE":
                     data[CARTEL_LED_2] = Convert.ToByte(toggleButton.IsChecked == true && (
-                        AudioPlayChecker.IsAudioPlaying(AudioPlayChecker.GetPeceraRenderDevice())
+                        AudioPlaybackWithWASAPI.IsAudioPlaying(AudioPlaybackWithWASAPI.GetPeceraRenderDevice())
                     ));
                     break;
 

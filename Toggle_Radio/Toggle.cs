@@ -1,29 +1,18 @@
-﻿using System.Windows;
-using System.Windows.Controls.Primitives;
+﻿using System;
 using CSCore.CoreAudioAPI;
-
+using System.Windows.Controls.Primitives;
+using System.Windows;
 
 namespace Toggle_Radio
 {
-
-    class AudioPlayChecker
+    class AudioPlaybackWithWASAPI
     {
-
         public static MMDevice GetNestorRenderDevice()
         {
             string VoiceMeeterAuxOutputDeviceID = "{0.0.1.00000000}.{69ECE92B-7B9D-4AFC-B4F3-EC0F1F5654B2}";
 
             using (var enumerator = new MMDeviceEnumerator())
             {
-                /*MMDeviceCollection collection = enumerator.EnumAudioEndpoints(DataFlow.Render, DeviceState.Active);
-                foreach (MMDevice device in collection)
-                {
-                    if (device.DeviceID == VoiceMeeterAuxOutputDeviceID)
-                    {
-                        return enumerator.GetDevice(device.DeviceID);
-                    }
-                }
-                return enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Console);*/
                 return enumerator.GetDevice(VoiceMeeterAuxOutputDeviceID);
             }
         }
@@ -37,7 +26,7 @@ namespace Toggle_Radio
             }
         }
 
-        // Checks if audio is playing on a certain device
+        // Función para verificar si se está reproduciendo audio en un dispositivo
         public static bool IsAudioPlaying(MMDevice device)
         {
             using (var meter = AudioMeterInformation.FromDevice(device))
@@ -49,7 +38,6 @@ namespace Toggle_Radio
     }
 
     public class Toggle : ToggleButton
-
     {
         static Toggle()
         {
@@ -57,29 +45,31 @@ namespace Toggle_Radio
         }
     }
 
- //   public class Program
- //   {
- //       public static void Main(string[] args)
- //       {
- //           bool USAR_CONSOLA = true;
- //           ActualizarConfiguracion(USAR_CONSOLA);
- //       }
 
- //       public static void ActualizarConfiguracion(bool USAR_CONSOLA)
-//        {
-//            string archivoFuente = USAR_CONSOLA ? "settings_with_behringer.ini" : "settings_with_virtualcable.ini";
-//            string archivoDestino = "default_settings.ini";
+    //   public class Program
+    //   {
+    //       public static void Main(string[] args)
+    //       {
+    //           bool USAR_CONSOLA = true;
+    //           ActualizarConfiguracion(USAR_CONSOLA);
+    //       }
 
-//            try
-//            {
-//                File.Copy(archivoFuente, archivoDestino, true);
-//                Console.WriteLine($"Se ha copiado el archivo {archivoFuente} a {archivoDestino}");
-//            }
-//            catch (IOException e)
-//            {
-//                Console.WriteLine($"Error al copiar el archivo: {e.Message}");
-//            }
-//        }
+    //       public static void ActualizarConfiguracion(bool USAR_CONSOLA)
+    //        {
+    //            string archivoFuente = USAR_CONSOLA ? "settings_with_behringer.ini" : "settings_with_virtualcable.ini";
+    //            string archivoDestino = "default_settings.ini";
 
-//    }
+    //            try
+    //            {
+    //                File.Copy(archivoFuente, archivoDestino, true);
+    //                Console.WriteLine($"Se ha copiado el archivo {archivoFuente} a {archivoDestino}");
+    //            }
+    //            catch (IOException e)
+    //            {
+    //                Console.WriteLine($"Error al copiar el archivo: {e.Message}");
+    //            }
+    //        }
+
+    //    }
+
 }
